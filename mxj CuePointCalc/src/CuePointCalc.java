@@ -1,4 +1,5 @@
 import com.cycling74.max.*;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -16,7 +17,7 @@ public class CuePointCalc extends MaxObject
     private final float[] arrCuePoints = new float[8];
 
     private static final String[] INLET_ASSIST = new String[] {
-            "MIDI notes B3 - C5 (white keys only, triggers output), bang for random", //inlet 0
+            "MIDI note A3 stops, CMaj 4-5 trigger cue-points, bang for random", //inlet 0
             "Duration of of audio file (in ms)" //inlet 1
     };
     private static final String[] OUTLET_ASSIST = new String[] {

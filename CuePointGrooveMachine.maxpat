@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 81.25, 232.219513416290283, 57.0, 22.0 ],
+					"text" : "tosymbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-82",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -215,7 +227,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 195.75, 264.0, 55.0, 22.0 ],
+					"patching_rect" : [ 191.0, 297.219513416290283, 55.0, 22.0 ],
 					"text" : "prefix $1"
 				}
 
@@ -245,7 +257,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 81.25, 264.0, 39.0, 22.0 ],
+					"patching_rect" : [ 81.25, 297.219513416290283, 39.0, 22.0 ],
 					"text" : "folder"
 				}
 
@@ -724,7 +736,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 443.0, 709.609756708145142, 79.0, 34.0 ],
+					"patching_rect" : [ 443.0, 709.609756708145142, 81.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1112.5, 81.219513416290283, 145.0, 20.0 ],
 					"text" : "Toggle on for random fun."
@@ -2524,9 +2536,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"order" : 0,
-					"source" : [ "obj-11", 0 ]
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -2534,7 +2553,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"order" : 1,
-					"source" : [ "obj-11", 0 ]
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}

@@ -44,7 +44,7 @@ The messages set the loop-start point to the cue-point, trigger the loop start, 
 
 The output of `groove~` is then routed to the `Effectors` subpatch. This is where the 5 effects are configured. a `TogEdge` is responsible for activating/deactivating the wet signal of each effect when its corresponding key is pressed/released. The output of Effectors is then sent to `live.gain`.
 
-For the randomizer, the cue-point spacing is also calculated, then wired to a `metro` that bangs CuePointCalc. CuePointCalc will activate a random cue-point Whenever it receives a bang in its first inlet.
+For the randomizer the cue-point spacing is calculated and then wired to a `metro` that bangs CuePointCalc. CuePointCalc will activate a random cue-point Whenever it receives a bang in its first inlet.
 
 **Some Tips**
 
@@ -77,7 +77,7 @@ the rest of the loop would become shifted by the same amount until another cue-p
 Initially the effect-intensity was modulated by key-velocity, but I found this was a bit too hard to control precisely and became distracting while playing.
 Nicer sounding effects and tighter controls for them may be a possible direction for my MUMT 307 project.
 
--  Because the cue-points change the playback position instantaneousl some drum loops will have have an audible click on cue-point change. I attempted to remedy this with
+-  Because the cue-points change the playback position instantaneously some drum loops will have an audible click on cue-point change. I attempted to remedy this with
 a `line~` object that would ramp from 0 to 1 in a few ms whenever a new cuepoint was activated. While this would work if the ramp-time was high enough, it also resulted in a loss of transients in the drum hits that were lined up with the cue point. As a result, I decided against the ramp time. Clicks are avoidable if the loop is dry and tightly timed.
 
 I hope you enjoy messing about and mangling some drums with this tool!

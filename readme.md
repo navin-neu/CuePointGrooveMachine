@@ -30,7 +30,7 @@ The 8 cue-points are mapped to the white keys from C4 to C5. The 5 effects are m
 
 **How does it work?**
 
-An audio buffer is filled by either the `dropfile` or a `umenu` selection. The selection is also sent to an `~sfinfo` object which gets the file's duration in milliseconds.
+An audio buffer is filled by either the `dropfile` or a `umenu` selection. The file is also sent to an `~sfinfo` object which gets the file's duration in milliseconds.
 
 This duration is sent to multiple locations. The the most important among them is the `mxj CuePointCalc` object. This is where all of the work is done for mapping notes and triggering cue-points. It works by taking in the duration and dividing it by 8 to find the appropriate cue-point times. These times are then stored in an 8-slot array, where each slot represents one of the 8 keys to which the cue-points are mapped. When CuePointCalc receives a note-on for one of these 8 keys, it sends out a sequence of 3 messages that are received by the `groove~` object. The messages set the loop-start point to the cue-point, trigger the loop start, then immediately reset the loop-start point back to 0 so the loop can continue as normal.
 

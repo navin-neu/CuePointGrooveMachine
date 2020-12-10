@@ -4,7 +4,7 @@ CuePointGrooveMachine is a simple instrument that takes any loop (usually a shor
 
 As a result, drum loops can be played and chopped up live much more easily than with a traditional sample slicer, since it is not necessary to trigger each distinct drum hit with a different key. Pattern variations can be created readily without losing the fluid feel of the drum loop.
 
-There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variations and dynamics to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point at a rate equal to the cue-point spacing.
+There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variation to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point at a rate equal to the cue-point spacing.
 
 CuePointGrooveMachine was created with the goal of being fast, fun, accessible and simple to use. Any MIDI keyboard with a 2 octave range is sufficient to access all of its controls. Absolutely no other MIDI info is needed. In addition to being simple to use, care was also taken to keep the patch simple to read and understand.
 

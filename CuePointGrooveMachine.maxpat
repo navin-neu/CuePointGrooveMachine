@@ -107,8 +107,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1235.0, 195.219513416290283, 243.0, 34.0 ],
-					"text" : "See .java for more info CuePointCalc, and open Effectors for more info on the effects"
+					"patching_rect" : [ 1235.0, 195.219513416290283, 255.0, 34.0 ],
+					"text" : "See .java for more info on CuePointCalc and open Effectors for more info on the effects"
 				}
 
 			}
@@ -842,7 +842,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 26.0, -995.0, 1852.0, 969.0 ],
+						"rect" : [ 42.0, -995.0, 1852.0, 969.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

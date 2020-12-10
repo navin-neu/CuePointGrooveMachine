@@ -17,11 +17,11 @@ public class CuePointCalc extends MaxObject
     private final float[] arrCuePoints = new float[8];
 
     private static final String[] INLET_ASSIST = new String[] {
-            "MIDI note A3 stops, CMaj 4-5 trigger cue-points, bang for random", //inlet 0
-            "Duration of of audio file (in ms)" //inlet 1
+            "Notes A3 - C5 = stop/trigger playback. Bang = random.", //inlet 0
+            "Duration of of audio file (in ms)." //inlet 1
     };
     private static final String[] OUTLET_ASSIST = new String[] {
-            "Messages for Cue Points", //outlet 0
+            "Messages for cue-points.", //outlet 0
     };
 
     /**
@@ -44,7 +44,7 @@ public class CuePointCalc extends MaxObject
      * @param args unused
      */
     public void anything(String input, Atom[] args) {
-        post("This isnt a message I can do anything with");
+        post("This isn't a message I can do anything with.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class CuePointCalc extends MaxObject
         if (inletNum == 0) {
             triggerCuePoint(ThreadLocalRandom.current().nextInt(0, arrCuePoints.length));
         }
-        else { post("Banging me wont do anything useful"); }
+        else { post("Banging me wont do anything useful."); }
     }
 
     /**
@@ -116,7 +116,7 @@ public class CuePointCalc extends MaxObject
         for (int idx = 0; idx < arrCuePoints.length; idx++) {
             arrCuePoints[idx] = slice * idx;
         }
-        post("cue point times are " + Arrays.toString(arrCuePoints));
+        post("Cue-point times are " + Arrays.toString(arrCuePoints));
     }
 
     /**

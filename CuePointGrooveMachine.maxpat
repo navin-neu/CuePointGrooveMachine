@@ -103,12 +103,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-70",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1235.0, 195.219513416290283, 255.0, 34.0 ],
-					"text" : "See .java for more info on CuePointCalc and open Effectors for more info on the effects"
+					"patching_rect" : [ 1235.0, 195.219513416290283, 255.0, 48.0 ],
+					"text" : "See the .java file for more info on CuePointCalc and open Effectors for more info on the effects."
 				}
 
 			}
@@ -120,7 +120,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 601.0, 738.609756708145142, 199.0, 34.0 ],
-					"text" : "CuePointCalc picks a random cuepoint when it receives a bang"
+					"text" : "CuePointCalc picks a random cuepoint when it receives a bang."
 				}
 
 			}
@@ -132,7 +132,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 337.0, 489.0, 303.0, 34.0 ],
-					"text" : "There is actually an invisible dropfile object overtop the waveform that allows for file dragging to work properly"
+					"text" : "There is actually an invisible dropfile object overtop the waveform that allows for file dragging to work properly."
 				}
 
 			}
@@ -144,7 +144,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 461.5, 189.219513416290283, 284.0, 34.0 ],
-					"text" : "Snapshot samples a signal down to a control rate, allowing me to use it for the playhead on waveform"
+					"text" : "Snapshot samples a signal down to a control rate, allowing me to use it for the playhead on waveform."
 				}
 
 			}
@@ -156,7 +156,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 81.25, 30.219513416290283, 150.0, 62.0 ],
-					"text" : "This will fetch the path of maxpat file so that the samples folder can be found relative to it"
+					"text" : "This will fetch the path of maxpat file so that the samples folder can be found relative to it."
 				}
 
 			}
@@ -168,7 +168,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 478.0, 20.219513416290283, 150.0, 48.0 ],
-					"text" : "This lets me bus all note info i need to anywhere in the patch cleanly"
+					"text" : "This lets me bus all note info I need to anywhere in the patch cleanly."
 				}
 
 			}
@@ -295,8 +295,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 776.5, 948.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1005.0, 440.0, 69.0, 20.0 ],
-					"text" : "mild distort"
+					"presentation_rect" : [ 1005.0, 440.0, 68.0, 20.0 ],
+					"text" : "Mild distort"
 				}
 
 			}
@@ -308,8 +308,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 768.0, 953.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 910.0, 440.0, 55.0, 20.0 ],
-					"text" : "bitcrush"
+					"presentation_rect" : [ 910.0, 440.0, 53.0, 20.0 ],
+					"text" : "Bitcrush"
 				}
 
 			}
@@ -321,7 +321,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 776.5, 948.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 813.0, 440.0, 40.0, 20.0 ],
+					"presentation_rect" : [ 821.0, 440.0, 34.0, 20.0 ],
 					"text" : "LPF"
 				}
 
@@ -334,8 +334,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 761.0, 948.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 611.0, 440.0, 46.0, 20.0 ],
-					"text" : "cverb"
+					"presentation_rect" : [ 613.0, 440.0, 46.0, 20.0 ],
+					"text" : "Cverb"
 				}
 
 			}
@@ -347,8 +347,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 768.0, 953.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 497.0, 440.0, 69.0, 20.0 ],
-					"text" : "hard distort"
+					"presentation_rect" : [ 497.0, 440.0, 75.0, 20.0 ],
+					"text" : "Hard distort"
 				}
 
 			}
@@ -472,8 +472,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 768.0, 953.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 302.0, 440.0, 59.0, 20.0 ],
-					"text" : "stop rand"
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 298.0, 426.0, 69.0, 34.0 ],
+					"text" : "Stop randomizer"
 				}
 
 			}
@@ -485,8 +486,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 776.5, 953.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 352.0, 863.0, 67.0, 20.0 ],
-					"text" : "Start rand"
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 345.0, 863.0, 72.0, 34.0 ],
+					"text" : "Start randomizer"
 				}
 
 			}
@@ -725,7 +727,7 @@
 					"patching_rect" : [ 443.0, 709.609756708145142, 79.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1112.5, 81.219513416290283, 145.0, 20.0 ],
-					"text" : "toggle on for random fun"
+					"text" : "Toggle on for random fun."
 				}
 
 			}
@@ -735,11 +737,11 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 454.5, 297.219513416290283, 270.0, 20.0 ],
+					"patching_rect" : [ 454.5, 297.219513416290283, 275.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 66.0, 166.609756708145142, 153.0, 34.0 ],
-					"text" : "drop an audio file here, or select from the umenu"
+					"text" : "Drop an audio file here, or select from the umenu."
 				}
 
 			}
@@ -842,7 +844,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 42.0, -995.0, 1852.0, 969.0 ],
+						"rect" : [ 26.0, -995.0, 1544.0, 969.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -870,7 +872,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-67",
@@ -1455,7 +1456,7 @@
 							}
 , 							{
 								"box" : 								{
-									"comment" : "affected signal",
+									"comment" : "Mangled signal.",
 									"id" : "obj-34",
 									"index" : 1,
 									"maxclass" : "outlet",
@@ -1526,7 +1527,7 @@
 							}
 , 							{
 								"box" : 								{
-									"comment" : "signal to mangle",
+									"comment" : "Signal to mangle.",
 									"id" : "obj-14",
 									"index" : 2,
 									"maxclass" : "inlet",
@@ -1695,7 +1696,7 @@
 							}
 , 							{
 								"box" : 								{
-									"comment" : "note on/off for effects",
+									"comment" : "Note on/off for effects.",
 									"id" : "obj-1",
 									"index" : 1,
 									"maxclass" : "inlet",

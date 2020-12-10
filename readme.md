@@ -15,7 +15,7 @@ Any MIDI keyboard with a 2 octave range is sufficient to access all of its contr
 Before using CuePointGrooveMachine, it is necessary to add the included CuePointCalc.class file to Max's java classpath. There are two ways to do this:
 
 1) Move the `.class` file to max's default classpath: On Windows this is found under `Program Files\Cycling '74\Max 8\resources\packages\max-mxj\java-classes\classes`, 
-and on Mac this should be located under `/Applications/Max*/java-doc/classes`. It is not necessary to include the `.java` file in the classpath.
+and on Mac this should be located under `/Applications/Max*/java-doc/classes` (though I would love a confirmation on this since I am not a mac owner). It is not necessary to include the `.java` file in the classpath.
 
 2) Edit the `max.java.config` file under `java-doc` and add the folder containing `CuePointCalc.class` as an additional search path.
 

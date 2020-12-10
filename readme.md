@@ -1,6 +1,6 @@
 **What is it?**
 
-CuePointGrooveMachine is a simple instrument that takes any loop (usually a short breakbeat) and calculates 8 evenly-spaced cue-points which can then be triggered from a single octave of a MIDI keyboard. Typical drum slicers will slice a drum loop into discrete sections and only play the one section to which a MIDI note is mapped. CuePointGrooveMachine is different: it simply starts playback of the audio file at the corresponding cue-point and then continues looping through the whole file.
+CuePointGrooveMachine is a simple instrument that takes any loop (usually a short breakbeat) and calculates 8 evenly-spaced cue-points which can then be triggered from a single octave of a MIDI keyboard. Typical drum slicers will slice a drum loop into discrete sections and only play the one section to which a MIDI note is mapped. CuePointGrooveMachine is different: rather than actually slicing the loop into chunks it simply starts playback of the loop at the corresponding cue-point and then continues looping through the whole file. Looping will continue until another cue-point is received or playback is stopped.
 
 As a result, drum loops can be played and chopped up live much more easily than with a traditional sample slicer, since it is not necessary to trigger each distinct drum hit with a different key. Pattern variations can be created readily without losing the fluid feel of the drum loop.
 

@@ -4,7 +4,7 @@ CuePointGrooveMachine is a simple instrument that takes any loop (usually a shor
 
 As a result, drum loops can be played and chopped up live much more easily than with a traditional sample slicer, since it is not necessary to trigger each distinct drum hit with a different key. Pattern variations can be created readily without losing the fluid feel of the drum loop.
 
-There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variations and dynamics to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point a rate equal to the cue-point spacing.
+There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variations and dynamics to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point at a rate equal to the cue-point spacing.
 
 CuePointGrooveMachine was created with the goal of being fast, fun, accessible and simple to use. Any MIDI keyboard with a 2 octave range is sufficient to access all of its controls. Absolutely no other MIDI info is needed.
 
@@ -12,13 +12,11 @@ A quick video demo can be found [here](https://youtu.be/YxlrMwZb4fg).
 
 **How do I set it up?**
 
-Before using CuePointGrooveMachine, it is necessary to add the included CuePointCalc.class file to Max's java classpath. There are two ways to do this:
+Before using CuePointGrooveMachine, it is necessary to add the included `CuePointCalc.class` file to Max's java classpath. There are two ways to do this:
 
-1) Move the `.class` file to max's default classpath: On Windows this is found under `Program Files\Cycling '74\Max 8\resources\packages\max-mxj\java-classes\classes`, and on Mac this should* be located under `/Applications/Max*/java-doc/classes`. It is not necessary to include the `.java` file in the classpath.
+1) Move the `.class` file to max's default classpath: On Windows this is found under `Program Files\Cycling '74\Max 8\resources\packages\max-mxj\java-classes\classes`, and on Mac this should* be located under `/Applications/Max*/java-doc/classes`. This is the option I recommend. Note that it is not necessary to include the `.java` file in the classpath. 
 
 2) Edit the `max.java.config` file under `java-doc` and add the folder containing `CuePointCalc.class` as an additional search path.
-
-I recommend the first option, personally.
 
 In order to load any mxj object in Max, it is also necessary to have an appropriate JRE installed. The patch has been tested with the JRE obtained [here](https://www.oracle.com/ca-en/java/technologies/javase-jre8-downloads.html).
 

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1544.0, 923.0 ],
+		"rect" : [ 34.0, 77.0, 1852.0, 939.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -856,7 +856,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 26.0, -995.0, 1544.0, 969.0 ],
+						"rect" : [ 42.0, -995.0, 1544.0, 969.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -884,6 +884,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-67",
@@ -985,7 +986,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1390.0, 241.0, 266.0, 34.0 ],
+									"patching_rect" : [ 1378.0, 241.0, 266.0, 34.0 ],
 									"text" : "Second mild overdrive. Good for breathing life back into a filltered and bitcrushed signal"
 								}
 
@@ -1008,7 +1009,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 701.0, 220.0, 153.0, 62.0 ],
+									"patching_rect" : [ 698.0, 220.0, 153.0, 62.0 ],
 									"text" : "A LPF filter sweep. Its phase is synced to the clip duration and is reset on key press"
 								}
 
@@ -1019,7 +1020,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 432.25, 253.390243291854858, 117.0, 20.0 ],
+									"patching_rect" : [ 432.25, 248.0, 117.0, 20.0 ],
 									"text" : "A very short reverb"
 								}
 
@@ -1187,7 +1188,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 1349.0, 285.5, 56.0, 22.0 ],
+									"patching_rect" : [ 1349.0, 298.609756708145142, 56.0, 22.0 ],
 									"text" : "TogEdge"
 								}
 
@@ -1294,7 +1295,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 1069.0, 285.5, 56.0, 22.0 ],
+									"patching_rect" : [ 1069.0, 298.609756708145142, 56.0, 22.0 ],
 									"text" : "TogEdge"
 								}
 
@@ -1413,8 +1414,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 927.0, 285.5, 75.0, 22.0 ],
-									"text" : "359.433107"
+									"patching_rect" : [ 907.0, 285.5, 65.5, 22.0 ],
+									"text" : "0"
 								}
 
 							}
@@ -1594,7 +1595,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 403.0, 251.390243291854858, 24.0, 24.0 ]
+									"patching_rect" : [ 403.0, 246.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1939,7 +1940,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-51", 0 ],
-									"order" : 1,
+									"order" : 2,
+									"source" : [ "obj-47", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-55", 1 ],
+									"order" : 0,
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -1947,7 +1956,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-55", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-47", 0 ]
 								}
 

@@ -6,7 +6,7 @@ As a result, drum loops can be played and chopped up live much more easily than 
 
 There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variations and dynamics to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point at a rate equal to the cue-point spacing.
 
-CuePointGrooveMachine was created with the goal of being fast, fun, accessible and simple to use. Any MIDI keyboard with a 2 octave range is sufficient to access all of its controls. Absolutely no other MIDI info is needed.
+CuePointGrooveMachine was created with the goal of being fast, fun, accessible and simple to use. Any MIDI keyboard with a 2 octave range is sufficient to access all of its controls. Absolutely no other MIDI info is needed. In addition to being simple to use, care was also taken to keep the patch simple to read and understand.
 
 A quick video demo can be found [here](https://youtu.be/YxlrMwZb4fg).
 
@@ -24,17 +24,17 @@ In order to load any mxj object in Max, it is also necessary to have an appropri
 
 **How do I use it?**
 
-Samples can either be selected from the drop-down menu or dragged directly onto the waveform display. Any `.wav` or `.aiff` files added to the `/samples` folder will appear in the drop-down menu so long as they were there when the patch was opened (otherwise you can bang the "path" message at the top to rescan the folder).
+Samples can either be selected from the drop-down menu or dragged directly onto the waveform display. Any `.wav` or `.aiff` files added to the `/samples` folder will appear in the drop-down menu so long as they were there when the patch was opened (otherwise you may bang the 'path' message at the top-left of the patch view to re-scan the folder).
 
-The 8 cue-points are mapped to the C-Maj scale from C4 to C5. The 5 effects are mapped to the black keys from C#4 to A#4. Randomizer is activated by B3. A#3 deactivates the randomizer but continues regular playback. A3 stops all playback. A helpful onscreen guide is included in the presentation view.
+The 8 cue-points are mapped to the white keys from C4 to C5. The 5 effects are mapped to the black keys from C#4 to A#4. Randomizer is activated by B3. A#3 deactivates the randomizer but continues regular playback. A3 stops all playback. A helpful onscreen guide is included in the presentation view.
 
 **How does it work?**
 
-An audio buffer is filled by either the dropfile or a menu selection. This is sent to an `~sfinfo` object which gets the file's duration in milliseconds.
+An audio buffer is filled by either the `dropfile` or a `umenu` selection. The selection is also sent to an `~sfinfo` object which gets the file's duration in milliseconds.
 
-This duration is sent to multiple locations, but the most important one is the `mxj CuePointCalc` object. This is where most of the work is done for mapping notes and triggering cue-points. It works by taking in the duration and dividing it by 8 to find the appropriate cue-point times. These times are then stored in an 8-slot array, where each slot represents one of the 8 keys to which the cue-points are mapped. When CuePointCalc receives a note-on for one of these 8 keys, it sends out a sequence of 3 messages that are received by the `groove~` object. The messages set the loop-start point to the cue-point, trigger the loop start, then immediately reset the loop-start point back to 0 so the loop can continue as normal.
+This duration is sent to multiple locations. The the most important among them is the `mxj CuePointCalc` object. This is where all of the work is done for mapping notes and triggering cue-points. It works by taking in the duration and dividing it by 8 to find the appropriate cue-point times. These times are then stored in an 8-slot array, where each slot represents one of the 8 keys to which the cue-points are mapped. When CuePointCalc receives a note-on for one of these 8 keys, it sends out a sequence of 3 messages that are received by the `groove~` object. The messages set the loop-start point to the cue-point, trigger the loop start, then immediately reset the loop-start point back to 0 so the loop can continue as normal.
 
-The output of `groove~` is then routed to the `Effectors` subpatch. This is where the 5 effects are configured. a `TogEdge` is responsible for activating/deactivating the wet signal of each effect when its corresponding key is pressed/released. The output of Effectors is then sent to `live.gain`.
+The output of `groove~` is then routed to the `Effectors` subpatch. This is where the 5 effects are configured and routed. a `TogEdge` is responsible for activating/deactivating the wet signal of each effect when its corresponding key is pressed/released. The output of Effectors is then sent to `live.gain`.
 
 For the randomizer the cue-point spacing is calculated and then wired to a `metro` that bangs CuePointCalc. CuePointCalc will activate a random cue-point Whenever it receives a bang in its first inlet.
 
@@ -62,8 +62,7 @@ For the randomizer the cue-point spacing is calculated and then wired to a `metr
 
 -  Because the cue-points change the playback position instantaneously some drum loops will have an audible click on cue-point change. I attempted to remedy this with a `line~` object that would ramp from 0 to 1 in a few ms whenever a new cuepoint was activated. While this would work if the ramp-time was high enough, it also resulted in a loss of transients in the drum hits that were lined up with the cue point. As a result, I decided against the ramp time. Clicks are avoidable if the loop is dry and tightly timed.
 
--  Occasionally the playhead on the waveform display may freeze up if the patch has been open for a long time. On my computer it takes about 40 minutes of randomizing for this to occur. Playback is not affected when this happens. I have not been able to find a cause for this issue, although I suspect it has to do with the snapshot object, as raising
-its polling rate triggers the issue much more consistently.
+-  Occasionally the playhead on the waveform display may freeze up if the patch has been open for a long time. On my computer it takes about 40 minutes of randomizing for this to occur. Playback is not affected when this happens. I have not been able to find a cause for this issue, although I suspect it has to do with the `snapshot~` object, as raising its polling rate triggers the issue much more consistently.
 
 I hope you enjoy messing about and mangling some drums with this tool!
 

@@ -26,7 +26,7 @@ I recommend the first option, personally.
 **How do I use it?**
 
 Samples can either be selected from the drop-down menu or dragged directly onto the waveform display. Any `.wav` or `.aiff` files added to the `/samples` folder
-will appear in the drop-down menu so long as they were there when the patch was opened (otherwise bang the "path" message at the top to rescan the folder).
+will appear in the drop-down menu so long as they were there when the patch was opened (otherwise you can bang the "path" message at the top to rescan the folder).
 
 The 8 cue-points are mapped to the C-Maj scale from C4 to C5. The 5 effects are mapped to the black keys from C#4 to A#4.
 Randomizer is activated by B3. A#3 deactivates the randomizer but continues regular playback. A3 stops all playback.

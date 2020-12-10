@@ -19,9 +19,9 @@ and on Mac this should* be located under `/Applications/Max*/java-doc/classes`. 
 
 2) Edit the `max.java.config` file under `java-doc` and add the folder containing `CuePointCalc.class` as an additional search path.
 
-I recommend the first option as its a bit more straightforward.
+I recommend the first option, personally.
 
-*I do not have a mac to confirm this. Please let me know if the path is innacurate!
+*I do not have a Mac to confirm this. Please let me know if the path is innacurate!
 
 **How do I use it?**
 

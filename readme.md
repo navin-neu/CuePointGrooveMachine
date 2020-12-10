@@ -78,4 +78,4 @@ Nicer sounding effects and tighter controls for them may be a possible direction
 -  Because the cue-points change the playback position instantaneousl some drum loops will have have an audible click on cue-point change. I attempted to remedy this with
 a `line~` object that would ramp from 0 to 1 in a few ms whenever a new cuepoint was activated. While this would work if the ramp-time was high enough, it also resulted in a loss of transients in the drum hits that were lined up with the cue point. As a result, I decided against the ramp time. Clicks are avoidable if the loop is dry and tightly timed.
 
-*Thanks to Blu Mar Ten for the included samples. They are part of a sample pack available [here](https://www.blumarten.com/product/junglejungle-free-sample-pack/).*
+*Thanks to Blu Mar Ten for the included samples. They are part of a sample pack freely available [here](https://www.blumarten.com/product/junglejungle-free-sample-pack/).*

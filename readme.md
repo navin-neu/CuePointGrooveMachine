@@ -2,7 +2,7 @@
 
 CuePointGrooveMachine is a simple instrument that takes any loop (usually a short breakbeat) and calculates 8 evenly-spaced cue-points which can then be triggered from a single octave of a MIDI keyboard. Typical drum slicers will slice a drum loop into discrete sections and only play the one section to which a MIDI note is mapped. CuePointGrooveMachine is different: rather than actually slicing the loop into chunks it simply starts playback of the loop at the corresponding cue-point. It then continues looping through the whole file until another cue-point is received or playback is stopped.
 
-As a result, drum loops can be played and chopped up live much more easily than with a traditional sample slicer, since it is not necessary to trigger each distinct drum hit with a different key. Pattern variations can be created readily without losing the fluid feel of the original drum loop.
+As a result, drum loops can be played and chopped up live much more easily than with a traditional sample slicer, since longer contiguous sections of the loop can be played through only a single keypress. Pattern variations can be created readily without losing the fluid feel of the original drum loop.
 
 There are also 5 effects which can be activated on the fly: hard overdrive, cverb, filter sweep, bitcrusher and soft overdrive. These can be used to add further variation to your performance. Finally, a randomizer is also included. When activated it will trigger playback from a random cue-point at a rate equal to the cue-point spacing.
 
@@ -14,19 +14,17 @@ A quick video demo can be found [here](https://youtu.be/YxlrMwZb4fg).
 
 Before using CuePointGrooveMachine, it is necessary to add the included `CuePointCalc.class` file to Max's java classpath. There are two ways to do this:
 
-1) Move the `.class` file to max's default classpath: On Windows this is found under `Program Files\Cycling '74\Max 8\resources\packages\max-mxj\java-classes\classes`, and on Mac this should* be located under `/Applications/Max*/java-doc/classes`. This is the option I recommend. Note that it is not necessary to include the `.java` file in the classpath. 
+1) Move the `CuePointCalc.class` file to max's default mxj classpath. This path will vary depending on your system. See the [mxj reference](https://docs.cycling74.com/max5/refpages/max-ref/mxj.html) for info on where to find it.
 
-2) Edit the `max.java.config` file under `java-doc` and add the folder containing `CuePointCalc.class` as an additional search path.
+2) Add the folder containing `CuePointCalc.class` as an additional path for Max to search. This is done through `Options` -> `File Preferences`.
 
 In order to load any mxj object in Max, it is also necessary to have an appropriate JRE installed. The patch has been tested with the JRE obtained [here](https://www.oracle.com/ca-en/java/technologies/javase-jre8-downloads.html).
-
-*I do not have a Mac to confirm this. Please let me know if the path is inaccurate!
 
 **How do I use it?**
 
 Samples can either be selected from the drop-down menu or dragged directly onto the waveform display. Any `.wav` or `.aiff` files added to the `/samples` folder will appear in the drop-down menu so long as they were there when the patch was opened (otherwise you may bang the 'path' message at the top-left of the patch view to re-scan the folder).
 
-The 8 cue-points are mapped to the white keys from C4 to C5. The 5 effects are mapped to the black keys from C#4 to A#4. Randomizer is activated by B3. A#3 deactivates the randomizer but continues regular playback. A3 stops all playback. A helpful onscreen guide is included in the presentation view.
+The 8 cue-points are mapped to the white keys from C4 to C5. The 5 effects are mapped to the black keys from C#4 to A#4. Randomizer is activated by B3. A#3 deactivates the randomizer but continues regular playback. A3 stops all playback. A helpful onscreen guide is included in the presentation view. Note that the `kslider` used by the guide does not actually output MIDI notes, but is instead only used for visual feedback. Therefore, **a MIDI controller or other external MIDI source is required to use the patch.**
 
 **How does it work?**
 
@@ -44,7 +42,7 @@ For the randomizer the cue-point spacing is calculated and then wired to a `metr
 
 -  Cheap midi keyboards are good! CuePointGrooveMachine is easiest to use with keyboards that have a shallow key travel and light action. If your keyboard is weighted and has a deep travel, you'll need to time your presses a bit early to compensate. Playback is also not velocity-sensitive. This is so that the loop's original dynamics are maintained.
 
--  The randomizer will trigger a random cue-point immediately when it is pressed. That means you should try to activate it on-beat.
+-  The randomizer will trigger a random cue-point immediately when it is pressed. That means you should try to activate it on-beat for a smooth performance.
 
 -  The effects are routed in order from left to right. The softer distortion is useful for bringing some life back into a bitcrushed/filtered signal, but be cautious when using it alongside the harder distortion.
 
@@ -52,17 +50,17 @@ For the randomizer the cue-point spacing is calculated and then wired to a `metr
 
 -  For tighter timing in a non-live setting, consider driving CuePointGrooveMachine with your preferred sequencer.
 
--  The LPF sweep effect is synced to the cue-point spacing. Its phase also resets on key press. Try activating it at different times within the loop to filter out different portions.
+-  The LPF sweep effect's rate is synced to the cue-point spacing. Its phase also resets on key press. Try activating it at different times within the loop to filter out different sections of the groove.
 
 **Design Quirks**
 
--  Cue-points are not lined up with transients, and are instead only placed at regular intervals along the file. While this can lead to some hits not lining up exactly with the cue-points if the drums aren't perfectly timed, I decided to keep this approach because of the continuous playback feature. If a cue-point were nudged off-grid to accomodate one drum hit, the rest of the loop would become shifted by the same amount until another cue-point is triggered.
+-  Cue-points are not lined up with transients, but are instead naively placed at regular intervals along the file. While this can lead to some hits not lining up exactly with the cue-points if the drums aren't perfectly timed, I decided to keep this approach because of the continuous playback feature. If a cue-point were nudged off-grid to accomodate one drum hit, the rest of the loop would become shifted by the same amount until another cue-point is triggered.
 
 -  The parameter settings for each of the effects were chosen by ear based on my own personal tastes (which is to say: they are not exactly subtle). Initially the effect-intensity was modulated by key-velocity, but I found this was a bit too hard to control precisely and felt that it became distracting while playing. Nicer sounding effects with more detailed controls may be a possible direction for my MUMT 307 project.
 
 -  Because the cue-points change the playback position instantaneously some drum loops will have an audible click on cue-point change. I attempted to remedy this with a `line~` object that would ramp from 0 to 1 in a few ms whenever a new cuepoint was activated. While this would work if the ramp-time was high enough, it also resulted in a loss of transients in the drum hits that were lined up with the cue-point. As a result, I decided against using any ramp time. Clicks are avoidable if the loop is dry and tightly timed.
 
--  Occasionally the playhead on the waveform display may freeze up if the patch has been open for a long time. On my computer it takes about 40 minutes of randomized playback for this to occur. Playback of audio is not affected when this happens. I have not been able to find a cause for this issue, although I suspect it has to do with the `snapshot~` object, as raising its polling rate triggers the issue much more consistently.
+-  Occasionally the playhead on the waveform display may freeze up if the patch has been open for a long time. On my computer it takes about 40 minutes of randomized playback for this to occur. Playback of audio is not affected when this happens. I have not been able to find a cause for this issue, although I suspect it has to do with the `snapshot~` object, as raising its polling rate triggers the issue much sooner and more consistently.
 
 I hope you enjoy messing about and mangling some drums with this tool!
 
